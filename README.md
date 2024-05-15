@@ -71,6 +71,12 @@ fetch('https://api.example.com/data', {
 });
 ```
 
+### Sending in Headers vs. Body
+
+**Headers:** Preferred for authentication information because headers are specifically designed to carry metadata (like authentication details) about the HTTP request or response. Headers are processed before the body, making them a more natural fit for information that needs to be evaluated prior to processing the content.
+
+**Body:** Typically used for the data relevant to the POST request.
+
 ## Response
 
 `res.send(user)` sends back the user that you sent.

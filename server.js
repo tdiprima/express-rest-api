@@ -37,6 +37,7 @@ app.get("/users", (req, res) => {
 app.get("/departments", (req, res) => {
     const departments = users.map(user => user.department);
     const uniqueDepartments = [...new Set(departments)];
+    console.log("statusCode: ", res.statusCode);
 
     if (uniqueDepartments.length === 0) {
         res.status(404).send({

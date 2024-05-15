@@ -1,4 +1,4 @@
-# hat-express-demo
+# express-api-demo
 
 **Start server:**
 
@@ -32,7 +32,7 @@ JSON Body:
 }
 ```
 
-Then check it in http://localhost:3000/users
+Check it: http://localhost:3000/users
 
 **Update user:**
 
@@ -50,8 +50,40 @@ PUT http://localhost:3000/user
 
 DELETE http://localhost:3000/user/1
 
-Get departments:
+**Get departments:**
 
 GET: http://localhost:3000/departments
+
+## Headers
+
+For handling sensitive information like authentication certificates or keys, the typical practice is to send them in the HTTP headers.
+
+Here's how you can typically use headers for sending an authentication key or token:
+
+```js
+fetch('https://api.example.com/data', {
+    method: 'GET', // or 'POST'
+    headers: {
+        'Authorization': 'Bearer YOUR_AUTH_TOKEN'
+    }
+});
+```
+
+## Response
+
+`res.send(user)` sends back the user that you sent.
+
+```js
+app.post("/user", (req, res) => {
+    const user = req.body;
+    console.log(user);
+    users.push(user);
+    res.send(user);
+});
+```
+
+If you do not send back a response, it'll hang, even though it's done.
+
+So always send back a response, whether it's an error message, or a message saying that it succeeded.
 
 <br>

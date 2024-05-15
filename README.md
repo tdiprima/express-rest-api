@@ -58,7 +58,9 @@ GET: http://localhost:3000/departments
 
 For handling sensitive information like authentication certificates or keys, the typical practice is to send them in the HTTP headers.
 
-Here's how you can typically use headers for sending an authentication key or token:
+Many authentication standards (such as OAuth, JWT, Bearer tokens) specify that tokens should be sent in the HTTP headers, typically using the Authorization header.
+
+**Example:** Using headers for sending an authentication key or token
 
 ```js
 fetch('https://api.example.com/data', {
